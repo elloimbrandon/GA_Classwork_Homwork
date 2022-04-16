@@ -35,6 +35,7 @@ const prompt = require("prompt-sync")();
 // risk*
 // tell the user "hey we made it! *stares at the mountain range with glee* do you want to check what you have collected along the way? (y/n) (hey cool we collected blank, blank, blank (now you just have to worry about getting back!)" *(hopefully (blank doesnt attack you again))
 
+
 // Main Function
 const startGame = () => {
   const oneMile = 5280;
@@ -87,15 +88,15 @@ const startGame = () => {
     return expressions[num];
   };
 
-  const userHealthStatus = (oneStep, totalWalkingFeet) => {
+  const userHealthStatus = () => {
     if (userHealth <= 0) return true;
     else {
       return false;
     }
   };
 
-  const checkHealth = (i, oneStep) => {
-    if (userHealthStatus(i, oneStep) == true) {
+  const checkHealth = () => {
+    if (userHealthStatus() == true) {
       prompt(`oh no! you're health is at 0, you have to turn back`);
       prompt(
         `you walk ${feetWalked} feet back to the start of the trail. You'll finish it next time!`
@@ -176,11 +177,11 @@ ________________________________________________________________________________
     feetWalked += oneStep;
     userHealth -= 1;
 
-    if (checkHealth(i, oneStep) === true) return;
+    if (checkHealth() === true) return;
     prompt(
       `< You've walked ${feetWalked} feet | Health = ${userHealth} | ${randomExpression} `
     );
-    
+
     shortCut++;
 
     if (shortCut == randomPath) {
@@ -192,7 +193,7 @@ ________________________________________________________________________________
         ) == true
       ) {
         i += oneStep;
-        if (checkHealth(i, oneStep) === true) return;
+        if (checkHealth() === true) return;
         console.log(`you chose to go down the sketchy path. hopefully you dont run into a ${currentHazardAnimal}!`);
       } else {
         prompt("you decide to take the safer route!");
@@ -202,19 +203,19 @@ ________________________________________________________________________________
           `you got attacked by a ${currentHazardAnimal} but you got away`
         );
       }
-      if (checkHealth(i, oneStep) === true) return;
+      if (checkHealth() === true) return;
     }
     if (animalAttack() === true) {
       prompt(
         `oh no! you got attacked by a ${currentHazardAnimal} but you got away`
       );
     }
+    if (checkHealth() === true) return;
     if (i === totalWalkingFeet) {
       prompt(
         `You made it to the end of the ${totalMiles} mile trail adventure with your health at ${userHealth}! Hopefully on the way back you dont run into a bear, cougar, or snake!`
       );
     }
-    if (checkHealth(i, oneStep) === true) return;
   }
 };
 
