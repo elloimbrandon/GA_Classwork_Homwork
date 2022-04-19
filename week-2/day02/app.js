@@ -15,6 +15,60 @@ const prompt = require("prompt-sync")();
 // every-time the ship attack the chance to hit or not hit depends on the accuracy
 // have option to top up hitpoints for heroship
 
+// Bonus's did
+// random multiple ships between 9 - 19
+
+const parseQuitAnswer = (quitOrExitResponse) => {
+    quitOrExitResponse.toLowerCase();
+    if (
+      !quitOrExitResponse ||
+      (quitOrExitResponse == "y" && quitOrExitResponse != "n") ||
+      (quitOrExitResponse == "yes" && quitOrExitResponse != "no")
+    ) {
+      return true;
+    } else return false;
+  };
+
+  const parseInputAnswer = (answer) => {
+    answer.toLowerCase();
+    if (
+      !answer ||
+      answer == "exit" ||
+      answer == "quit" ||
+      (answer == "n" && answer != "y") ||
+      (answer == "no" && answer != "yes")
+    ) {
+      let quitOrExitResponse = prompt(
+        "Are you sure you want to end the game? (y/n)"
+      );
+      if (parseQuitAnswer(quitOrExitResponse) == true) {
+        return true;
+      } else return false;
+    }
+    return false;
+  };
+
+
+console.log(`
+  \\ \\_____              \\ \\_____      |--- SPACE BATTLE ---|
+###[==_____>   --  -- ###[==_____> 
+   /_/                   /_/
+        
+        \\ \\_____                               \\ \\_____
+      ###[==_____>  --      --     --    -   ###[==_____>
+         /_/                                    /_/              `);
+console.log(`Welcome to space battle! Destroy alien ships to save the planet!`)
+
+const heroName = prompt(`Who's flying the ship? `);
+// const heroAnswer = prompt(`Great ${heroName}! Are you ready to play? (y/n)`);
+
+let leave = 0;
+
+if (parseInputAnswer(prompt(`Great ${heroName}! Are you ready to play? (y/n)`)) == true) {
+    console.log("okay, goodbye!");
+    leave = 1;
+  }
+
 const alienShipNames = [
   "purple ship",
   "green ship",
@@ -43,19 +97,12 @@ const randomAlienShipChoice = (max, min) => {
   return result;
 };
 
-
 const randomAlienAccuracy = (max, min) => {
   let result = (Math.random() * (max - min) + min).toFixed(1);
   return result;
 };
 
 let randomNumShips = randomAlienShipChoice(20,10);
-
-// console log (hey! theres another alien ship and they're flying a ${purple ship})
-
-const heroName = prompt(
-  `welcome, what would you like to name your ship? (name)`
-);
 
 const heroShip = {
   name: heroName,
@@ -93,18 +140,6 @@ const loadUpAlienShips = (randomNumShips) => { //
   }
 };
 
-// console.log(randomNumShips);
-// console.log(alienShip.accuracy);
-
-// console.log(randomAccuracy(alienShip.accuracy));
-// for (let i = 1; i < 10; ++i) {
-//   console.log(
-//     `${alienShip[i].name}, ${alienShip[i].hull}, ${alienShip[i].firepower}, ${alienShip[i].accuracy}`
-//   );
-// }
-
-// console.log(alienShip);
-
 const heroShipAttack = () => {
     if (randomAccuracy(heroShip.accuracy) == 1 && heroShip.hull > 0 && alienShip[i].hull > 0)
     {
@@ -118,76 +153,83 @@ const heroShipAttack = () => {
 
 }
 
+const alienShipAttack = () => {
+    if (randomAccuracy(alienShip[i].accuracy) == 1 && alienShip[i].hull > 0 && heroShip.hull > 0 )
+    {
+        alienShip[i].attackEnemy(heroShip);
+        return true;
+    }
+    else if (randomAccuracy((alienShip[i].accuracy) == 0) && heroShip.hull > 0) {
+        return false;
+    } 
+
+}
+const breakLine = (num) => {
+    if (num === 1)
+        console.log("-----------------------------------------------");
+    if (num === 2)
+        console.log("");
+}
+
 let round = 1;
 
-loadUpAlienShips(randomNumShips); // will add 10 more ships to object // you see that Yulia? i didnt even put the value in the function...
+loadUpAlienShips(randomNumShips);
 
 
-for (i = 1; i < randomNumShips && heroShip.hull > 0; ++i) {
+for (i = 1; i < randomNumShips && heroShip.hull > 0 && leave == 0; ++i) {
   for (heroShip.hull; heroShip.hull > 0 && alienShip[i].hull > 0; ++round) {
-    
-    console.log(`Round: ${round}!`);
-
+      
+    console.log(`-------------------Round: ${round}!-------------------`);
     console.log(
       `Hero ship health: ${heroShip.hull} | Alien ship health: ${alienShip[i].hull}, Alien ship number: ${alienShip[i].number}`
     );
-
-    console.log(`${heroShip.name}'s ship attacks the aliens ${alienShip[i].name}`);
+    breakLine(1);
+    breakLine(2);
+    console.log(`>> ${heroShip.name}'s ship attacks the aliens ${alienShip[i].name}`);
 
     if (heroShipAttack() == true) {
-        console.log(`${heroShip.name}'s ship hit the aliens ${alienShip[i].name}!`);
+        console.log(`>> ${heroShip.name}'s ship hit the aliens ${alienShip[i].name} for ${heroShip.firepower} damage!`);
+        breakLine(2);
     }
     else {
-        console.log(`${heroShip.name}'s ship missed their shot!`);
+        console.log(`>> ${heroShip.name} missed their shot!`);
+        breakLine(2);
     }
-
-    // if (randomAccuracy(heroShip.accuracy) == 1 && heroShip.hull > 0 && alienShip[i].hull > 0)
-    // {
-    //     heroShip.attackEnemy(alienShip[i]);
-    //     console.log(`${heroShip.name}'s ship hit the aliens ${alienShip[i].name}!`);
-    // }
-
-    // else if (randomAccuracy(heroShip.accuracy) == 0) {
-    //     console.log(`${heroShip.name}'s ship missed their shot!`);
-    // }
 
     if (alienShip[i].hull <= 0) 
     {
         alienShip[i].hull = 0;
-        console.log(`You destroyed the aliens ${alienShip[i].name}!`);
-        if (alienShip[i] != alienShip[randomNumShips - 1]){ // fix
-            const leaveFight = prompt(`do you want to continue fighting?`);
-            if (leaveFight == "n" && leaveFight != "y") {
+        console.log(`** You destroyed the aliens ${alienShip[i].name}! **`);
+        breakLine(2);
+        if (alienShip[i] != alienShip[randomNumShips - 1]){
+            breakLine(1);
+            const leaveFight = prompt(`>> do you want to continue fighting? (y/n)`);
+            breakLine(2);
+            if ((leaveFight && leaveFight == "n" && leaveFight != "y") || (leaveFight == "no" && leaveFight !="yes")) {
+                console.log(`>> Your commander wont let you flee alive ${heroShip.name}...`)
                 heroShip.hull = 0;
             }
         }
         else
-        console.log(`${heroShip.name}, you destroyed ${randomNumShips - 1} alien ships and saved the universe!`);
-        // const leaveFight = prompt(`You destroyed the aliens ${alienShip[i].name}! do you want to continue fighting?`);
-        // if (leaveFight == "n" && leaveFight != "y") {
-        //     heroShip.hull = 0;
-        // }
+            console.log(`------${heroShip.name}, you destroyed ${randomNumShips - 1} alien ships and saved the universe!------`);
     }
 
-    if (randomAccuracy(alienShip[i].accuracy) == 1 && alienShip[i].hull > 0 && heroShip.hull > 0 )
-    {
-        alienShip[i].attackEnemy(heroShip);
-        console.log(`the aliens ${alienShip[i].name} hit ${heroShip.name}'s ship!`);
+    if (alienShipAttack() == true) {
+        console.log(`>> the aliens ${alienShip[i].name} hit ${heroShip.name}'s ship for ${alienShip.firepower} damage!`);
+        breakLine(2);
     }
-    else if (randomAccuracy((alienShip[i].accuracy) == 0) && heroShip.hull > 0) {
-        console.log(`the aliens ${alienShip[i].name} missed their shot!`);
-    } 
-    if (heroShip.hull <= 0) { // keep eye on
-      console.log(`${heroShip.name} was destroyed!`);
+
+    if ((alienShipAttack() == false) && heroShip.hull > 0) {
+        console.log(`>> the aliens ${alienShip[i].name} missed their shot!`);
+        breakLine(2);
+    }
+
+    if (heroShip.hull <= 0) {
+        breakLine(1);
+        console.log(`-------- ${heroShip.name}'s ship was destroyed! --------`);
+        breakLine(1);
     }
   }
 }
 
-// alien ship is still getting attack if its hull is less than 0
-// only fighting the 10 times until first for loops conditions are met
-// also have to implement accuracy
-// hero ship health below 0
-
-// potential bonuses 
-// multiple alien ships
 // hull upgrade station
