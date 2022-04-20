@@ -18,6 +18,8 @@ const prompt = require("prompt-sync")();
 // Bonus's did
 // random multiple ships between 9 - 19
 
+
+// Functions to parse the initial player response 
 const parseQuitAnswer = (quitOrExitResponse) => {
     quitOrExitResponse.toLowerCase();
     if (
@@ -47,8 +49,9 @@ const parseQuitAnswer = (quitOrExitResponse) => {
     }
     return false;
   };
+////////////////////////////////////////////////////////
 
-
+// Initial Welcome
 console.log(`
   \\ \\_____              \\ \\_____      |--- SPACE BATTLE ---|
 ###[==_____>   --  -- ###[==_____> 
@@ -60,8 +63,8 @@ console.log(`
 console.log(`Welcome to space battle! Destroy alien ships to save the planet!`)
 
 const heroName = prompt(`Who's flying the ship? `);
-// const heroAnswer = prompt(`Great ${heroName}! Are you ready to play? (y/n)`);
 
+// variable to use for checking if the user wants to continue
 let leave = 0;
 
 if (parseInputAnswer(prompt(`Great ${heroName}! Are you ready to play? (y/n)`)) == true) {
@@ -69,19 +72,14 @@ if (parseInputAnswer(prompt(`Great ${heroName}! Are you ready to play? (y/n)`)) 
     leave = 1;
   }
 
-const alienShipNames = [
-  "purple ship",
-  "green ship",
-  "yellow ship",
-  "blue ship",
-  "orange ship",
-];
+// Random functions to return random numbers some set with limitations
 
 const randomChoice = (num) => {
   let result = Math.floor(Math.random() * num);
   return result;
 };
 
+// Returns odds of hitting the opposing ship
 const randomAccuracy = (shipAccuracy) => {
     let result = (Math.random() * (1 - .1) + .1).toFixed(1);
     if (shipAccuracy > result) {
@@ -92,17 +90,30 @@ const randomAccuracy = (shipAccuracy) => {
     }
   };
 
+// Returns a random amount of ships between 9 - 19 to fight against
 const randomAlienShipChoice = (max, min) => {
   let result = Math.floor(Math.random() * (max - min) + min);
   return result;
 };
 
+// Using  a variable to store the ships in and to add to the alienShip object
+let randomNumShips = randomAlienShipChoice(20,10);
+
+// Generates a random accuracy for the alien ships
 const randomAlienAccuracy = (max, min) => {
   let result = (Math.random() * (max - min) + min).toFixed(1);
   return result;
 };
 
-let randomNumShips = randomAlienShipChoice(20,10);
+
+
+const alienShipNames = [
+    "purple ship",
+    "green ship",
+    "yellow ship",
+    "blue ship",
+    "orange ship",
+  ];
 
 const heroShip = {
   name: heroName,
@@ -114,7 +125,8 @@ const heroShip = {
   },
 };
 
-const alienShip = { // might not need this //////////////////////
+// hull, firepower, and accuracy are all randomly generated at the start of the program
+const alienShip = { // might not need this 
   number: 1,
   name: alienShipNames[randomChoice(5)],
   hull: randomAlienShipChoice(7, 3),
@@ -125,6 +137,7 @@ const alienShip = { // might not need this //////////////////////
   },
 };
 
+// This function add's the amount of ships that we got from randomAlienShipChoice to the alienShip object as an object itself
 const loadUpAlienShips = (randomNumShips) => { //
     for (let i = 1; i < randomNumShips; ++i) {
       alienShip[i] = {
@@ -140,6 +153,7 @@ const loadUpAlienShips = (randomNumShips) => { //
   }
 };
 
+// Function to check if the Hero ship hit the Alien ship
 const heroShipAttack = () => {
     if (randomAccuracy(heroShip.accuracy) == 1 && heroShip.hull > 0 && alienShip[i].hull > 0)
     {
@@ -153,6 +167,7 @@ const heroShipAttack = () => {
 
 }
 
+// Function to check if the Alien ship hit the Hero Ship
 const alienShipAttack = () => {
     if (randomAccuracy(alienShip[i].accuracy) == 1 && alienShip[i].hull > 0 && heroShip.hull > 0 )
     {
@@ -164,6 +179,8 @@ const alienShipAttack = () => {
     } 
 
 }
+
+// Function to use for printing a space or line
 const breakLine = (num) => {
     if (num === 1)
         console.log("-----------------------------------------------");
@@ -171,22 +188,28 @@ const breakLine = (num) => {
         console.log("");
 }
 
+// Variable to keep track of the rounds played
 let round = 1;
 
+// invoking the function to add the alien ships to the object
 loadUpAlienShips(randomNumShips);
 
 
+// For loop to iterate through the number of random number of alien ships and wont
+// break until there are ano ships to destroy or the players ship has no more hull points
 for (i = 1; i < randomNumShips && heroShip.hull > 0 && leave == 0; ++i) {
+// Another for loop to iterate through each alien ship object in the parent object
   for (heroShip.hull; heroShip.hull > 0 && alienShip[i].hull > 0; ++round) {
       
     console.log(`-------------------Round: ${round}!-------------------`);
     console.log(
-      `Hero ship health: ${heroShip.hull} | Alien ship health: ${alienShip[i].hull}, Alien ship number: ${alienShip[i].number}`
+      `${heroShip.name}'s ship health: ${heroShip.hull} | Alien ship health: ${alienShip[i].hull}, Alien ship number: ${alienShip[i].number}`
     );
     breakLine(1);
     breakLine(2);
     console.log(`>> ${heroShip.name}'s ship attacks the aliens ${alienShip[i].name}`);
 
+    // if the hero ship hits the alien ship then it will deduct hull from that alien ship
     if (heroShipAttack() == true) {
         console.log(`>> ${heroShip.name}'s ship hit the aliens ${alienShip[i].name} for ${heroShip.firepower} damage!`);
         breakLine(2);
@@ -196,6 +219,7 @@ for (i = 1; i < randomNumShips && heroShip.hull > 0 && leave == 0; ++i) {
         breakLine(2);
     }
 
+    // if the alien ship's hull is 0 or less than 0 it gets destroyed and when we're at the last one to not prompt
     if (alienShip[i].hull <= 0) 
     {
         alienShip[i].hull = 0;
@@ -214,16 +238,17 @@ for (i = 1; i < randomNumShips && heroShip.hull > 0 && leave == 0; ++i) {
             console.log(`------${heroShip.name}, you destroyed ${randomNumShips - 1} alien ships and saved the universe!------`);
     }
 
+    // if the alien ship hits the hero ship then it will deduct hull from hero ship
     if (alienShipAttack() == true) {
         console.log(`>> the aliens ${alienShip[i].name} hit ${heroShip.name}'s ship for ${alienShip.firepower} damage!`);
         breakLine(2);
     }
-
+    // if the alien misses their shot
     if ((alienShipAttack() == false) && heroShip.hull > 0) {
         console.log(`>> the aliens ${alienShip[i].name} missed their shot!`);
         breakLine(2);
     }
-
+    // if hero's health reaches 0 they're dead
     if (heroShip.hull <= 0) {
         breakLine(1);
         console.log(`-------- ${heroShip.name}'s ship was destroyed! --------`);
@@ -231,5 +256,3 @@ for (i = 1; i < randomNumShips && heroShip.hull > 0 && leave == 0; ++i) {
     }
   }
 }
-
-// hull upgrade station
