@@ -18,6 +18,8 @@
 
 let $bank = 1;
 
+let $days = 1;
+
 let $inventory = [];
 
 const $tools = [
@@ -27,6 +29,9 @@ const $tools = [
   "Electric Mower",
   "Pack Of Starving Students",
 ];
+
+$(".inv").text($inventory);
+$(".bank-num").text($bank);
 
 // functions to use
 
@@ -47,6 +52,8 @@ const $teethButton = () => {
       $bank = $bank - 1;
       $inventory.push("Teeth");
       alert("you added Teeth to your inventory!");
+      $(".inv").append($inventory[$inventory.length - 1]);
+      $(".bank-num").text($bank);
     } else alert("you cant afford that yet!");
   } else {
     alert("you already have that tool!");
@@ -59,6 +66,10 @@ const $rustyScissorsButton = () => {
       $bank = $bank - 5;
       $inventory.push("Rusty Scissors");
       alert("you added Rusty Scissors to your inventory!");
+      $(".inv")
+        .append(`, `)
+        .append($inventory[$inventory.length - 1]);
+      $(".bank-num").text($bank);
     } else alert("you cant afford that yet!");
   } else {
     alert("you already have that tool!");
@@ -71,6 +82,10 @@ const $pushmowerButton = () => {
       $bank = $bank - 25;
       $inventory.push("Push Mower");
       alert("you added a Push Mower to your inventory!");
+      $(".inv")
+        .append(`, `)
+        .append($inventory[$inventory.length - 1]);
+      $(".bank-num").text($bank);
     } else alert("you cant afford that yet!");
   } else {
     alert("you already have that tool!");
@@ -83,6 +98,10 @@ const $electricmowerButton = () => {
       $bank = $bank - 250;
       $inventory.push("Electric Mower");
       alert("you added an Electric Mower to your inventory!");
+      $(".inv")
+        .append(`, `)
+        .append($inventory[$inventory.length - 1]);
+      $(".bank-num").text($bank);
     } else alert("you cant afford that yet!");
   } else {
     alert("you already have that tool!");
@@ -95,6 +114,10 @@ const $starvingStudentsButton = () => {
       $bank = $bank - 500;
       $inventory.push("Pack Of Starving Students");
       alert("you added a Pack Of Starving Students to your inventory!");
+      $(".inv")
+        .append(`, `)
+        .append($inventory[$inventory.length - 1]);
+      $(".bank-num").text($bank);
     } else alert("you cant afford that yet!");
   } else {
     alert("you already have that tool!");
@@ -126,44 +149,104 @@ const yeildAmount = ($currentTool) => {
   } else alert("you made no money!");
 };
 
+// alert counter
+
+let $scissorsAlert = 0;
+let $pushmowerAlert = 0;
+let $electricmowerAlert = 0;
+let $studentsAlert = 0;
+
+const $checkAlertInventory = () => {
+  if ($bank >= 5 && $scissorsAlert <= 0) {
+    $("#rusty-scissors").css("opacity", "80%");
+    alert("you a able to buy Rusty Scissors!");
+    $scissorsAlert = 1;
+  }
+  if ($bank >= 25 && $pushmowerAlert <= 0) {
+    $("#push-mower").css("opacity", "80%");
+    alert("you a able to buy Push Mower!");
+    pushmowerAlert = 1;
+  }
+  if ($bank >= 250 && $electricmowerAlert <= 0) {
+    $("#electric-mower").css("opacity", "80%");
+    alert("you a able to buy Electric Mower!");
+    $electricmowerAlert = 1;
+  }
+  if ($bank >= 500 && $studentsAlert <= 0) {
+    $("#starving-students").css("opacity", "80%");
+    alert("you a able to buy A Pack Of Starving Students!");
+    $studentsAlert = 1;
+  }
+};
+
 // mow lawn button
 
 const $mowLawn = () => {
-  // remove
-  $("img").fadeIn(5000);
+  $checkAlertInventory();
+  let $currentTool = $inventory[$inventory.length - 1];
+
   if ($inventory[$inventory.length - 1] == undefined) {
     alert("you cant cut lawns, you have no tools!");
   } else {
-    // $("img").fadeIn(5000);
     // current tool variable
-    let $currentTool = $inventory[$inventory.length - 1];
 
     // money made from the yield depending on tool
     let $moneyMade = 0;
 
-    alert(`your current tool is ${$inventory[$inventory.length - 1]} !`);
-
     $moneyMade = yeildAmount($currentTool);
     $bank = $bank + $moneyMade;
-
-    alert(`you made ${$moneyMade}!`);
-    alert(`you now have $${$bank} dollars in your bank!`);
+    $(".bank-num").text($bank);
+    $("#ctp").text(`${$currentTool}`);
+    $("#lap").text(
+      `It's day: ${$days} and you made $${$moneyMade} mowing lawns!`
+    );
+    $days++;
+    $("img").fadeIn(1000);
+    $("img").fadeOut(1000);
   }
-  $("img").fadeOut(5000);
-
-  // use a function to set tool yield
 };
 
 // function to bring us to the start of the game
 const $goHome = () => {
   // set both variables back to zero
-  let $bank = 1;
-  let $inventory = [];
+  $days = 1;
+  $bank = 1;
+  $teethAlert = 0;
+  $scissorsAlert = 0;
+  $pushmowerAlert = 0;
+  $electricmowerAlert = 0;
+  $studentsAlert = 0;
+  $inventory = [];
+  $("#lap").text("");
+  $("#cpt").text("");
+  $("#teeth").css("opacity", "0.33");
+  $("#rusty-scissors").css("opacity", "0.33");
+  $("#push-mower").css("opacity", "0.33");
+  $("#electric-mower").css("opacity", "0.33");
+  $("#starving-students").css("opacity", "0.33");
+
   alert("you have restarted!");
+
+  $("#teeth").css("opacity", "80%");
+  alert("you a able to buy Teeth!");
 };
 
 $(() => {
-  // button on clicks
+  // inital values
+
+  $(".inv").text($inventory);
+  $(".bank-num").text($bank);
+
+  if (
+    $bank >= 1000 &&
+    $inventory[$inventory.length - 1] == "Pack Of Starving Students"
+  ) {
+    // end game check
+    alert("you won the game!");
+  }
+
+  $("#teeth").css("opacity", "80%");
+  alert("you a able to buy Teeth!");
 
   // tools buttons
   $("#teeth").on("click", $teethButton);
@@ -178,15 +261,5 @@ $(() => {
   // mow lawn button
   $("#mow-lawn").on("click", $mowLawn);
 
-  // end game check
-  if (
-    $bank >= 1000 &&
-    $inventory[$inventory.length - 1] == "Pack Of Starving Students"
-  ) {
-    alert("you won the game!");
-  }
   // exit game button
 });
-
-// const $inactiveButton = $('<div>').addClass('inactive');
-//     $inactive.css('opacity', '0.33');
