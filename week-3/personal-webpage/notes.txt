@@ -1,0 +1,15 @@
+
+
+Idea's -
+
+1. have hover over gifs/images zoom and move if gif in jquery
+2. maybe build a loading bar in jquery?
+3. modal in jquery using my email box already on my web page
+4. have a photo carisol of projects with images
+5. or have a photo carisol the has gif move and stop of projects
+
+thoughts on how to get layout -
+
+1. lookup how to have a cut rectangle and image in a container
+2. lookup how to build a solid nav bar, responsize with jquery or css and html
+
