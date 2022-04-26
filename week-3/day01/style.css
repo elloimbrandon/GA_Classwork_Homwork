@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    /* we'll need to set that for all buttons and maybe have title be an a tag to bring you to the start if clicked */ 
+    /* cursor: pointer;/* */
+ }
+
+button {
+    cursor: pointer;
+    
+}
+button:hover {
+    color:rgb(87, 124, 0);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+  @font-face {
+    font-family: IBM Plex Mono, monospace;
+    src: url(https://fonts.googleapis.com)
+}
+
+body {
+    top: 0;
+    left: 0;
+    /* Background image is a placeholder - we can find something later */
+    /* background-image:url(https://media.timeout.com/images/103558189/1372/772/image.jpg); */
+    background-color: rgb(213, 255, 114);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:  IBM Plex Mono, monospace;
+    color: black; 
+   
+ }
+
+ h1 {
+    font-size: 3em;
+    margin: 1em;
+    
+ }
+
+ h2 {
+    font-size: em;
+    margin: 2em;
+    font-weight: 300;
+    text-align-last: left;
+    
+ }
+
+ nav {
+     display: grid;
+     position: fixed;
+     margin-top: 1em;
+     margin-right: 2em;
+     top: 0;
+     right: 0
+     
+ }
+
+ ul {
+     display: block;
+     
+     
+ }
+
+ li {
+     display: inline-flex;
+     overflow: hidden;
+     padding: 1em;
+ }
+
+ a {
+     text-decoration: none;
+     color: black;
+ }
+
+ img {
+     display: none;
+     /* display: flex;
+     flex-direction: column; */
+     position: absolute;
+     overflow: hide;
+     top: 50%;
+     left: 50%;
+     margin-right: -50%;
+     transform: translate(-50%, -50%);
+     /* align-items: center;
+     margin-left: 470px;
+     margin-top: -375px; */
+     border-radius: 5px;
+     box-shadow: 3px 3px 3px 0 rgba(3, 3, 3, 0.62);
+ }
+
+ #mickey-img {
+
+ }
+
+#last-activity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
+    margin-top: 100px;
+}
+ #container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px;
+
+}
+
+header {
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+main {
+    grid-row: 2/3;
+    grid-column: 1;
+}
+
+.button-wrapper {
+    display: grid;
+    grid-template-columns: 1;
+    gap: 24px;
+    margin: 3em;
+    padding: 3em;
+
+}
+
+.tool-buttons {
+    display: grid;
+    grid-auto-rows: 16px;
+    font-family:  IBM Plex Mono, monospace;
+    padding: 16px;
+    width: 200px;
+    line-height: 16px;   
+    margin: 2em;  
+    border-radius: 32px;    
+    border-color: black;
+    border-width: 1px;
+ }
+
+ .mow-lawn-button {
+    display: grid;
+    background-color: #cfff0e;
+    grid-auto-rows: 16px;
+    grid-auto-rows: 16px;
+    font-family:  IBM Plex Mono, monospace;
+    padding: 16px;
+    width: 200px;
+    line-height: 16px;
+    border-radius: 32px;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-style: solid;   
+}
+
+#end {
+    color: rgb(0, 0, 0);
+    background-color: rgb(237, 236, 236);
+    border-radius: 4px;
+    border-style: none;
+    font-weight: 100;
+    font-size: 18px;
+    font-style: normal;
+    position: absolute;
+    left: 60px;
+    
+}
+
+footer {
+    display: flex;
+    padding: 16px;
+    position: relative;
+    bottom: 32px;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    /* padding: 24px; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    font-size: .75em;
+    overflow: auto;
+}
+
+
+/* BUTTONS: ----------------------->*/ 
+
+/* .tool-buttons {
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.mow-lawn-button {
+    border: 1px solid blue;
+    cursor: pointer;
+}
+ 
+ 
+ /* ============================================NEW CODE ENDS HERE  */
+ /*
+    box-sizing: border-box; */ 
+    /* we'll need to set that for all buttons and maybe have title be an a tag to bring you to the start if clicked */
+    /* cursor: pointer; */
+/* }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+  @font-face {
+    font-family: IBM Plex Mono, monospace;
+    src: url(https://fonts.googleapis.com)
+}
+
+body {
+    top: 0;
+    left: 0; */
+    /* Background image is a placeholder - we can find something later */
+    /* background-image:url(https://media.timeout.com/images/103558189/1372/772/image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:  IBM Plex Mono, monospace;
+    text-transform: lowercase;
+    color: black; */
+    /* text-shadow: 2px 2px #000000; */
+/* }
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+}
+
+#exit-button {
+    
+}
+
+header {
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+main {
+    grid-row: 2/3;
+    /* grid-column:  */
+/* } */
+
+
+.button-wrapper {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+}
+
+.tool-buttons {
+    display: grid;
+    grid-auto-rows: 16px;
+    padding: 8px;
+    width: 200px;
+    line-height: 16px;
+}
+
+.mow-lawn-button {
+    display: grid;
+    grid-auto-rows: 16px;
+    padding: 8px;
+    width: 200px;
+    line-height: 16px;
+
+}
+
+/* BUTTONS: ----------------------->*/ 
+
+/* .tool-buttons {
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.mow-lawn-button {
+    border: 1px solid blue;
+    cursor: pointer;
+} */
