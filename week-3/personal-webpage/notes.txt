@@ -7,6 +7,8 @@ Idea's -
 3. modal in jquery using my email box already on my web page
 4. have a photo carisol of projects with images
 5. or have a photo carisol the has gif move and stop of projects
+6. resume in another tab
+7. 2 links on main page that says got to resume to get my contact info
 
 thoughts on how to get layout -
 
