@@ -44,7 +44,6 @@ html {
     width: 100%;
     height: 10%;
     margin: 0;
-
     border: 1px solid red;
 }
 
@@ -110,17 +109,17 @@ html {
 .burger-name {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: underline;
+
+
 
     /* might need to change this? */
     /* overflow: hidden; */
 
-    width: 25%;
+    width: 35%;
     height: 100%;
-
-    margin-right: 15px;
 
     border: 1px solid magenta;
 }
@@ -128,8 +127,8 @@ html {
 .burger-container {
 
     /* activate when screen is a certain size */
-    /* display: none; */
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -144,11 +143,11 @@ html {
 
 .burger-svg {
     display: flex;
-
     cursor: pointer;
+    background-repeat: no-repeat;
 
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
 
     border: 1px solid purple;
 }
@@ -156,6 +155,55 @@ html {
 
 .burger-svg:hover {
     opacity: 0.33;
+}
+
+@media screen and (max-width: 450px) {
+
+    .burger-name-flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: 100%;
+        margin-left: 10px;
+
+        border: 1px solid blue;
+    }
+    .logo {
+        display: none;
+    }
+    .link {
+        display: none;
+    }
+    .burger-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: underline;
+    
+        width: 75%;
+        height: 100%; 
+    
+        border: 1px solid magenta;
+    }
+    .burger-container {
+    
+        /* activate when screen is a certain size */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        height: 100%;
+        width: 25%;
+    
+    
+        border: 1px solid black;
+    }
+
+
 }
 
 /* .burger-gif {
