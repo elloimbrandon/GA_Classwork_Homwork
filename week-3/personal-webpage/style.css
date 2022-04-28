@@ -15,8 +15,8 @@
 
 html {
     /* keep an eye on these */
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     /* remove later */
     background-color: whitesmoke;
@@ -26,7 +26,7 @@ html {
     display: flex;
     flex-direction: column;
 
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
     /* margin: 0 auto; */
@@ -242,7 +242,7 @@ html {
 
     margin-top: 5px;
 
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 
 .social-nav-links {
@@ -267,21 +267,21 @@ html {
     content: url(icons8-linkedin-circled.svg);
     cursor: pointer;
 
-    width: 50%;
+    width: 65%;
 }
 
 #github {
     content: url(icons8-github.svg);
     cursor: pointer;
 
-    width: 50%;
+    width: 65%;
 }
 
 #instagram {
     content: url(icons8-instagram.svg);
     cursor: pointer;
 
-    width: 50%;
+    width: 65%;
 }
 
 .profile-picture-img {
@@ -342,11 +342,12 @@ html {
     justify-content: flex-start;
 
     padding-left: 10px;
+    margin-bottom: 5px;
 }
 
 .project-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -355,6 +356,51 @@ html {
 
     border: 1px solid magenta;
 
+}
+
+.project-rows-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 8.5%;
+}
+
+.project-rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 30%;
+
+    margin: 1px;
+
+
+    border: 1px solid blue;
+}
+
+.project-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+    height: 100%;
+
+    border: 1px solid red;
+
+}
+
+#minishell-project {
+    content: url(minishell-png.jpg);
+
+    width: 75%;
+    height: 85%;
 }
 
 @media screen and (max-width: 750px) {
@@ -390,59 +436,106 @@ html {
     
         padding-top: 15px;
 
-        height: 100%;
+        height: 50%;
         width: 25%;
     
     
         border: 1px solid black;
     }
 
-    .boi-projects-row-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        width:100%;
-        height: 100%;
-        margin-top: 25px;
-
-        border: 1px solid orange;
-    }
-
     .bio-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-
+        height: 100%;
         width: 100%;
-    
+        padding-right: 0px;
     }
 
-    .project-container {
+    .bio-description-container {
+    
+        height: 100%;
+    
+        border: 1px solid green;
+    }
+
+    .bio-description-row {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
     
         width: 100%;
+        height: 100%;
 
+        font-size: 15px;
+    
+        margin-top: 10px;
+    
+        border: 1px solid cyan;
+    }
+    .boi-projects-row-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        width: 100%;
+        height: 75%;
+
+        margin-top: 15px;
+        
+        border: 1px solid black;
+    }
+
+    .about-me-bio-text {
+        font-size: 15px;
+    }
+
+    .profile-picture-container {
+    
+        width: 100%;
+        height: auto;
+    
+        padding-top: 0px;
+        margin-right: 0px;
+    
+        border: 1px solid blue;
+    }
+
+    .profile-picture-img {
+        margin-left: 0;
+        margin-right: 0;
+        width: 89%;
+    }
+
+    .social-nav-links {
+        margin-right: 0px;
+    
+        border: 1px solid red;
+    }
+    #linked-in {
+        width: 100%;
+    }
+    
+    #github {
+        width: 100%;
+    }
+    
+    #instagram {
+        width: 100%;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    
+        width: 100%;
+        height: 100%;
+
+        margin-top: 15px;
     
         border: 1px solid magenta;
     
     }
 
-
 }
-
-/* .burger-gif {
-    display: flex;
-
-    cursor: pointer;
-
-    width: 100%;
-    height: 100%;
-
-    border: 1px solid purple;
-} */
