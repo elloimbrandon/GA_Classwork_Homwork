@@ -210,7 +210,6 @@ html {
     width:100%;
     height:100%;
 
-    padding-left: 0px;
     padding-right: 15px;
 
     border: 1px solid purple;
@@ -226,7 +225,7 @@ html {
     width: 100%;
     height: 100%;
 
-    padding-top: 5px;
+    padding-top: 10px;
     margin-right: 5px;
 
     border: 1px solid blue;
@@ -255,11 +254,13 @@ html {
     width: 100%;
     height: 100%;
 
+    margin-right: 15px;
+
     border: 1px solid red;
 }
 
 .social-nav-icons {
-
+    /* placeholder */
 }
 
 #linked-in {
@@ -305,6 +306,42 @@ html {
     height: 50%;
 
     border: 1px solid green;
+}
+
+.about-me-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    text-decoration: underline;
+
+    padding-top: 5px;
+    padding-left: 10px;
+
+    border: 1px solid yellow;
+}
+
+.bio-description-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 65%;
+
+    margin-top: 10px;
+
+    border: 1px solid cyan;
+}
+
+.about-me-bio-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    padding-left: 10px;
 }
 
 .project-container {
