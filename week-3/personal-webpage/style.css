@@ -28,6 +28,7 @@ html {
 
     width: 100vw;
     height: 100vh;
+    /* height: 607px; */
 
     /* margin: 0 auto; */
 
@@ -186,7 +187,7 @@ html {
 
 }
 
-.boi-projects-row-container {
+.bio-projects-row-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -303,7 +304,7 @@ html {
     align-items: flex-start;
 
     width: 100%;
-    height: 50%;
+    height: 100%;
 
     border: 1px solid green;
 }
@@ -365,7 +366,7 @@ html {
     align-items: center;
 
     width: 100%;
-    height: 8.5%;
+    height: 7.5%;
 }
 
 .project-rows {
@@ -399,15 +400,56 @@ html {
 #minishell-project {
     content: url(minishell-png.jpg);
 
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 75%;
     height: 85%;
 }
 
+#minishell-project:hover {
+    transform: scale(1.15);
+    transition: all 0.25s ease;
+}
+
+#rps-project {
+    content: url(rps.jpg);
+
+    padding-top: 12px;
+    padding-bottom: 10px;
+    width: 48%;
+    height: 85%;
+}
+
+#rps-project:hover {
+    transform: scale(1.15);
+    transition: all 0.25s ease;
+}
+
+#wolf3d-project {
+    content: url(wolf3d.jpg);
+
+    padding-top: 9px;
+    padding-bottom: 9px;
+    width: 49%;
+    height: 85%;
+}
+
+#wolf3d-project:hover {
+    transform: scale(1.15);
+    transition: all 0.25s ease;
+}
+
 @media screen and (max-width: 750px) {
+
+    .main-flex-container {
+        display: flex;
+        flex-direction: column;
+    
+        /* width: 200vw; */
+    }
 
     .burger-name-flex-container {
         margin: 0;
-    
         /* border: 1px solid blue; */
     }
     .logo {
@@ -451,7 +493,7 @@ html {
 
     .bio-description-container {
     
-        height: 100%;
+        height: auto;
     
         border: 1px solid green;
     }
@@ -471,7 +513,7 @@ html {
     
         border: 1px solid cyan;
     }
-    .boi-projects-row-container {
+    .bio-projects-row-container {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
