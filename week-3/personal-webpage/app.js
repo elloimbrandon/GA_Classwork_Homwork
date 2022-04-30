@@ -36,16 +36,37 @@ $(() => {
     $("#wolf3d-project").css("content", "url(wolf3d.jpg)");
   });
 
-  $(".contact-button").on("click", function () {
-    const $text = $(".contact-button").text();
+  // contact form function
+
+  $(".contact-button-off").on("click", function () {
+    const $text = $(".contact-button-off").text();
 
     if ($text == "Click Here To Contact Me") {
-      $(".contact-button").text("Close");
+      $(".contact-button-off").text("Close");
     }
     if ($text == "Close") {
-      $(".contact-button").text("Click Here To Contact Me");
+      $(".contact-button-off").text("Click Here To Contact Me");
     }
 
+    // $(".resume-container-off").toggle(150).css("width", "50%");
+    $(".resume-img-off").toggleClass(".resume-img");
+
+    $(".contact-container").toggle(150).css("display", "flex");
     $("#contact-form").toggle(150).css("display", "flex");
   });
+
+  // $(".contact-button").on("click", function () {
+  //   const $text = $(".contact-button").text();
+
+  //   if ($text == "Click Here To Contact Me") {
+  //     $(".contact-button").text("Close");
+  //   }
+  //   if ($text == "Close") {
+  //     $(".contact-button").text("Click Here To Contact Me");
+  //   }
+
+  //   // $(".resume-container-off").toggleClass("resume-container");
+  //   // $("#resume-img-off").toggleClass("#resume-img");
+  //   $("#contact-form").toggle(150).css("display", "flex");
+  // });
 });
