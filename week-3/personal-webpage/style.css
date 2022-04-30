@@ -112,7 +112,7 @@ html {
     align-items: flex-end;
     /* text-decoration: underline; */
     
-    font-size: 23px;
+    font-size: 17px;
 
     width: 35%;
     height: 100%;
@@ -169,26 +169,31 @@ html {
 
 .burger-bar-ol {
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 
     background-color: transparent;
 
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-right: 10px;
+    padding:10px;
+    /* width: 100%; */
 
     border: 1px solid red;
 }
 
 .resume-link-burger-bar {
-    text-decoration: underline;
     color: black;
     cursor: pointer;
 
-    font-size: 45px;
+    text-decoration: none;
+    text-align: center;
 
+    font-size: 27px;
+    padding: 5px;
+
+    width: 100%;
+
+    border-bottom: 1px solid black ;
 }
 
 .bio-projects-row-container {
@@ -262,10 +267,6 @@ html {
     margin-right: 15px;
 
     border: 1px solid red;
-}
-
-.social-nav-icons {
-    /* placeholder */
 }
 
 #linked-in {
@@ -384,7 +385,6 @@ html {
 
     margin: 1px;
 
-
     border: 1px solid blue;
 }
 
@@ -396,6 +396,8 @@ html {
 
     width: 45%;
     height: 100%;
+
+    font-size: 12px;
 
     border: 1px solid red;
 
@@ -475,27 +477,21 @@ html {
     content: url(brandon-resume.jpg);
 
     width: 35%;
-    height: 90%;
+    height: 95%;
 
     border: 1px solid green;
 }
 
 
 .resume-img:hover {
-    transform: scale(1.15);
+    transform: scale(1.20);
     transition: all 0.25s ease;
-}
-
-.resume-img-off:hover {
-    transform: scale(1.25);
-    transition: all 0.25s ease;
-
+    margin-bottom: 120px;
 }
 
 
 
 .contact-container {
-    /* display: flex; */
     display: none;
     flex-direction: column;
     align-items: center;
@@ -515,7 +511,7 @@ html {
 
     cursor: pointer;
 
-    font-size: 25px;
+    font-size: 17px;
 
     width: 25%;
     height: 5%;
@@ -538,12 +534,10 @@ html {
 
     cursor: pointer;
 
-    font-size: 25px;
+    font-size: 17px;
 
     width: 45%;
     height: 5%;
-
-    margin-top: 10px;
 
     background-color: rgb(0, 202, 253);
     border: 1px solid blue;
@@ -629,33 +623,37 @@ html {
         margin: 0;
         /* border: 1px solid blue; */
     }
+
     .home {
         display: none;
     }
+
     .link {
         display: none;
     }
+
     .burger-name {
         justify-content: flex-start;
         align-items: flex-end;
 
-        font-size: 20px;
+        font-size: 15px;
     
         width: 80%;
     
         border: 1px solid magenta;
     }
+
     .burger-container {
     
         /* activate when screen is a certain size */
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
     
         padding-top: 15px;
 
-        height: 50%;
+        height: 100%;
         width: 25%;
     
     
@@ -663,16 +661,9 @@ html {
     }
 
     .bio-container {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         padding-right: 0px;
-    }
-
-    .bio-description-container {
-    
-        height: auto;
-    
-        border: 1px solid green;
     }
 
     .bio-description-row {
@@ -682,7 +673,8 @@ html {
         align-items: flex-start;
     
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
+        height: 40vh;
 
         font-size: 15px;
     
@@ -697,7 +689,8 @@ html {
         align-items: flex-start;
 
         width: 100%;
-        height: 75%;
+        /* height: 75%; */
+        height: 100vh;
 
         margin-top: 15px;
         
@@ -715,6 +708,7 @@ html {
     
         padding-top: 0px;
         margin-right: 0px;
+
     
         border: 1px solid blue;
     }
@@ -730,6 +724,7 @@ html {
     
         border: 1px solid red;
     }
+
     #linked-in {
         width: 100%;
     }
@@ -749,12 +744,50 @@ html {
         align-items: flex-start;
     
         width: 100%;
-        height: 100%;
+        height: 100vh;
 
-        margin-top: 15px;
+        margin: 0px;
+        /* padding-top: 15px; */
     
         border: 1px solid magenta;
     
+    }
+
+    .project-rows {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    
+        width: 100%;
+
+        /* keep an eye here */
+        /* height: 100%; */
+    
+        margin: 1px;
+    
+        border: 1px solid blue;
+    }
+    .project-image-container {
+    
+        width: 55%;
+        height: 100%;
+        font-size: 10px;
+    }
+
+    #minishell-project {
+        width: 90%;
+        height: 85%;
+    }
+    
+    #rps-project {
+        width: 95%;
+        height: 75%;
+    }
+    
+    #wolf3d-project {
+        width: 90%;
+        height: 80%;
     }
 
     .resume-contact-row-container {
@@ -768,31 +801,62 @@ html {
         border: 1px solid purple;
     }
 
-    .resume-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .resume-img {
+        content: url(brandon-resume.jpg);
     
         width: 100%;
-        height: 100%;
+        height: 90%;
     
-    
-        border: 1px solid red;
+        border: 1px solid green;
     }
+
+    .contact-button {
+        font-size: 15px;
+    
+        width: 60%;
+        height: 5%;
+        margin-top: -25px;
+    
+        margin-bottom: 5px;
+    }
+
     .contact-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     
         width: 100%;
-        height: 100%;
     
         border: 1px solid blue;
     }
-    
 
+    #contact-form {
+        width: 100%;
+        height: 100%;
     
+        padding: 10px;
+    
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    #contact-form label {
+        line-height: 25px;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+    
+    #contact-form textarea {
+        font-size: 20px;
+    
+        width: 100%;
+        height: 100%;
+    }
+
+    .input-field {
+        font-size: 20px;
+        height: 6%;
+    
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
 
 }
