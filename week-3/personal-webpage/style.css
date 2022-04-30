@@ -447,8 +447,8 @@ html {
 .resume-contact-row-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 
     width: 100%;
     height: 90%;
@@ -459,7 +459,7 @@ html {
     border: 1px solid purple;
 }
 
-.resume-container-off {
+.resume-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -471,21 +471,7 @@ html {
     border: 1px solid red;
 }
 
-.resume-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    width: 50%;
-    height: 100%;
-
-
-    border: 1px solid red;
-}
-
-
-.resume-img-off {
+.resume-img {
     content: url(brandon-resume.jpg);
 
     width: 35%;
@@ -494,14 +480,6 @@ html {
     border: 1px solid green;
 }
 
-.resume-img {
-    content: url(brandon-resume.jpg);
-
-    width: 50%;
-    height: 100%;
-
-    border: 1px solid green;
-}
 
 .resume-img:hover {
     transform: scale(1.15);
@@ -520,33 +498,12 @@ html {
     /* display: flex; */
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 
     width: 50%;
     height: 100%;
 
-    border: 1px solid blue;
-}
-
-.contact-button-off {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-
-    font-size: 25px;
-
-    width: 25%;
-    height: 5%;
-
-    /* margin: auto; */
-    margin-bottom: 10px;
-    /* margin-left: 150px; */
-
-    background-color: rgb(0, 202, 253);
     border: 1px solid blue;
 }
 
@@ -560,12 +517,10 @@ html {
 
     font-size: 25px;
 
-    width: 50%;
-    height: 10%;
+    width: 25%;
+    height: 5%;
 
-    margin: auto;
-    margin-top: 5px;
-    /* margin-left: 150px; */
+    margin-bottom: 10px;
 
     background-color: rgb(0, 202, 253);
     border: 1px solid blue;
@@ -575,8 +530,31 @@ html {
     background-color: grey;
 }
 
+.close-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    width: 45%;
+    height: 5%;
+
+    margin-top: 10px;
+
+    background-color: rgb(0, 202, 253);
+    border: 1px solid blue;
+}
+
+.close-button:hover {
+    background-color: grey;
+}
+
 #contact-form {
-    display: none;
+    display: flex;
     flex-direction: column;
     
     width: 80%;
@@ -586,9 +564,8 @@ html {
     
     padding: 25px;
 
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 
     border: 1px solid rgb(0, 202, 253);
 }

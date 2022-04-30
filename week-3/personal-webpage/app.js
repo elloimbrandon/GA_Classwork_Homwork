@@ -38,35 +38,37 @@ $(() => {
 
   // contact form function
 
-  $(".contact-button-off").on("click", function () {
-    const $text = $(".contact-button-off").text();
+  $(".contact-button").on("click", function () {
+    $(".resume-container").toggle(100).css("display", "none");
 
-    if ($text == "Click Here To Contact Me") {
-      $(".contact-button-off").text("Close");
-    }
-    if ($text == "Close") {
-      $(".contact-button-off").text("Click Here To Contact Me");
-    }
-
-    // $(".resume-container-off").toggle(150).css("width", "50%");
-    $(".resume-img-off").toggleClass(".resume-img");
-
-    $(".contact-container").toggle(150).css("display", "flex");
-    $("#contact-form").toggle(150).css("display", "flex");
+    $(".contact-container").toggle(100).css("display", "flex");
   });
 
-  // $(".contact-button").on("click", function () {
-  //   const $text = $(".contact-button").text();
+  $(".close-button").on("click", function () {
+    $(".resume-container").toggle(100).css("display", "flex");
 
-  //   if ($text == "Click Here To Contact Me") {
-  //     $(".contact-button").text("Close");
-  //   }
-  //   if ($text == "Close") {
-  //     $(".contact-button").text("Click Here To Contact Me");
-  //   }
-
-  //   // $(".resume-container-off").toggleClass("resume-container");
-  //   // $("#resume-img-off").toggleClass("#resume-img");
-  //   $("#contact-form").toggle(150).css("display", "flex");
-  // });
+    $(".contact-container").toggle(100).css("display", "flex");
+  });
 });
+
+// $(".contact-button").on("click", function () {
+//   const $text = $(".contact-button").text();
+
+//   if ($text == "Click Here To Contact Me") {
+//     $(".contact-button").text("Close");
+//   }
+//   if ($text == "Close") {
+//     $(".contact-button").text("Click Here To Contact Me");
+//   }
+
+//   // $(".resume-container-off").toggleClass("resume-container");
+//   // $("#resume-img-off").toggleClass("#resume-img");
+//   $("#contact-form").toggle(150).css("display", "flex");
+// });
+
+// if ($text == "Click Here To Contact Me") {
+//   $(".contact-button-off").text("Close");
+// }
+// if ($text == "Click Here To Contact Me") {
+//   $(".contact-button-off").text("Close");
+// }
