@@ -37,7 +37,15 @@ $(() => {
   });
 
   $(".contact-button").on("click", function () {
-    $(".contact-button").css("display", "none");
-    $("#contact-form").css("display", "flex");
+    const $text = $(".contact-button").text();
+
+    if ($text == "Click Here To Contact Me") {
+      $(".contact-button").text("Close");
+    }
+    if ($text == "Close") {
+      $(".contact-button").text("Click Here To Contact Me");
+    }
+
+    $("#contact-form").toggle(150).css("display", "flex");
   });
 });
