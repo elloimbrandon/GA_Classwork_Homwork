@@ -30,8 +30,31 @@
         <a class="resume-link-burger-bar" href="#">Resume</a>
       </ol>
       <div class="resume-contact-row-container">
-        <div class="resume-container">1</div>
-        <div class="contact-container">2</div>
+        <div class="resume-container">
+          <img id="resume-img" alt="resume" />
+        </div>
+        <div class="contact-container">
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/xyybwbnk"
+            method="POST"
+          >
+            <label>Name</label>
+            <input required class="input-field" type="text" name="name" />
+            <label>Subject</label>
+            <input required class="input-field" type="text" name="subject" />
+            <label>Email</label>
+            <input required class="input-field" type="text" name="email" />
+            <label>Message</label>
+            <textarea
+              required
+              class="input-field"
+              type="text"
+              name="message"
+            ></textarea>
+            <input id="submit-btn" type="submit" value="Send" />
+          </form>
+        </div>
       </div>
     </div>
   </body>
