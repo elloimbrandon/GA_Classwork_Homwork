@@ -35,4 +35,9 @@ $(() => {
   $("#wolf3d-project").mouseleave(function () {
     $("#wolf3d-project").css("content", "url(wolf3d.jpg)");
   });
+
+  $(".contact-button").on("click", function () {
+    $(".contact-button").css("display", "none");
+    $("#contact-form").css("display", "flex");
+  });
 });
