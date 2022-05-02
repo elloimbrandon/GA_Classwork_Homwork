@@ -20,8 +20,16 @@ html {
     width: 100%;
     height: 100%;
 
-    /* remove later */
-    background-color: whitesmoke;
+    /* color: white; */
+
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+    background-repeat:repeat-y;
+
+    color: #2d3436 linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+
+    /* background-color: #4d4855;
+    background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%); */
 }
 
 .main-flex-container {
@@ -31,7 +39,7 @@ html {
     width: 100vw;
     height: 100vh;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
     border-radius: 3px;
 }
 
@@ -44,13 +52,13 @@ html {
     width: 100%;
     height: 10%;
     margin: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .home {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 
     cursor: pointer;
@@ -60,22 +68,27 @@ html {
     width: 10%;
     height: 100%;
 
+    font-size: 25px;
 
-    border: 1px solid blue;
+    border-bottom: .5px solid black;
+}
+
+.home:hover {
+    color: darkcyan;
 }
 
 .link {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     width: 10%;
     height: 100%;
 
     margin-left: 15px;
 
-    border: 1px solid blue;
+    border-bottom: .5px solid black;
 }
 
 .resume-a-tag {
@@ -86,6 +99,12 @@ html {
     padding-left: 5px;
     padding-right: 5px;
 
+    font-size: 25px;
+
+}
+
+.resume-a-tag:hover {
+    color: darkcyan;
 }
 
 .burger-name-flex-container{
@@ -101,7 +120,7 @@ html {
     /* to see where the box ends? */
     margin-left: 10px;
 
-    border: 1px solid blue;
+    border-bottom: 0.5px solid black;
 }
 
 .burger-name {
@@ -116,7 +135,8 @@ html {
     width: 35%;
     height: 100%;
 
-    border: 1px solid magenta;
+/* 
+    border: 1px solid magenta; */
 }
 
 .burger-container {
@@ -132,7 +152,7 @@ html {
 
     margin-right: 0px;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .burger-svg {
@@ -145,7 +165,7 @@ html {
     width: 50px;
     height: 40px;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 .burger-svg-close {
@@ -157,7 +177,7 @@ html {
     width: 50px;
     height: 40px;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 
@@ -177,7 +197,7 @@ html {
     padding:10px;
     /* width: 100%; */
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .resume-link-burger-bar {
@@ -192,7 +212,7 @@ html {
 
     width: 100%;
 
-    border-bottom: 1px solid black ;
+    /* border-bottom: 1px solid black ; */
 }
 
 .bio-projects-row-container {
@@ -206,7 +226,7 @@ html {
     
     margin-top: 40px;
 
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 
 }
 
@@ -221,7 +241,7 @@ html {
 
     padding-right: 15px;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 
 }
 
@@ -237,8 +257,13 @@ html {
     padding-top: 10px;
     margin-right: 5px;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
+
+.intro-h1 {
+    padding-right: 130px;
+}
+
 
 .profile-picture-social-links {
     display: flex;
@@ -265,7 +290,9 @@ html {
 
     margin-right: 15px;
 
-    border: 1px solid red;
+    border-radius: 4px;
+
+    /* border: 1px solid red; */
 }
 
 #linked-in {
@@ -289,6 +316,17 @@ html {
     width: 65%;
 }
 
+#linked-in:hover {
+    opacity: .5;
+}
+#github:hover {
+    opacity: .5;
+}
+
+#instagram:hover {
+    opacity: .5;
+}
+
 .profile-picture-img {
     display: flex;
     content: url(profile-pic.jpg);
@@ -299,6 +337,10 @@ html {
     margin-right: 10px;
     margin-left: 10px;
 
+    border-radius: 3px;
+/* 
+    box-shadow: 0.5rem 0.5rem black,
+    -0.5rem -0.5rem #ccc; */
 }
 
 .bio-description-container {
@@ -310,7 +352,7 @@ html {
     width: 100%;
     height: 100%;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .about-me-title {
@@ -319,12 +361,12 @@ html {
     justify-content: flex-end;
     align-items: flex-start;
 
-    text-decoration: underline;
+    /* text-decoration: underline; */
 
     padding-top: 5px;
     padding-left: 10px;
 
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 
 .bio-description-row {
@@ -336,9 +378,13 @@ html {
     width: 100%;
     height: 65%;
 
-    margin-top: 10px;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 10px;
 
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
+    border-top: .5px solid black;
+    /* border-bottom: .5px solid black; */
 }
 
 .about-me-bio-text {
@@ -346,8 +392,6 @@ html {
     flex-direction: row;
     justify-content: flex-start;
 
-    padding-left: 10px;
-    margin-bottom: 5px;
 }
 
 .project-container {
@@ -359,7 +403,9 @@ html {
     width: 100%;
     height: 100%;
 
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
+
+    border-left: .5px solid black;
 
 }
 
@@ -371,6 +417,8 @@ html {
 
     width: 100%;
     height: 7.5%;
+
+    /* text-decoration: underline 2px; */
 }
 
 .project-rows {
@@ -384,7 +432,7 @@ html {
 
     margin: 1px;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .project-image-container {
@@ -397,8 +445,9 @@ html {
     height: 100%;
 
     font-size: 12px;
+    /* text-decoration: underline; */
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
@@ -423,6 +472,7 @@ html {
     padding-bottom: 10px;
     width: 48%;
     height: 85%;
+
 }
 
 #rps-project:hover {
@@ -454,26 +504,31 @@ html {
     width: 55%;
     height: 100%;
 
-    border: 1px solid blue;
+    border-bottom: .5px solid black;
+}
+
+#wolf3d-no-underline-brorder {
+    border: none;
 }
 
 .project-description-header-text {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 
     padding-top: 15px;
     padding-left: 5px;
     margin-bottom: 5px;
 
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 
 }
 
 .project-description-body-text {
 
     padding-left: 5px;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 
-    font-size: 20px;
+    font-size: 17px;
+
 
 }
 
@@ -489,7 +544,7 @@ html {
 
     margin-top: 20px;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 .resume-container {
@@ -501,7 +556,7 @@ html {
     width: 100%;
     height: 100%;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .resume-img {
@@ -510,7 +565,7 @@ html {
     width: 35%;
     height: 95%;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 
@@ -531,7 +586,7 @@ html {
     width: 50%;
     height: 100%;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .contact-button {
@@ -550,7 +605,7 @@ html {
     margin-bottom: 10px;
 
     background-color: rgb(0, 202, 253);
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .contact-button:hover {
@@ -691,6 +746,10 @@ html {
         border: 1px solid black;
     }
 
+    .intro-h1 {
+        padding-right: 0px;
+    }
+
     .bio-container {
         height: 100vh;
         width: 100%;
@@ -708,11 +767,16 @@ html {
         height: 40vh;
 
         font-size: 15px;
-    
-        margin-top: 10px;
-    
-        border: 1px solid cyan;
+
+        margin-top: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+            
+            /* border: 1px solid cyan; */
+            border-top: .5px solid black;
+            /* border-bottom: .5px solid black; */
     }
+    
     .bio-projects-row-container {
         display: flex;
         flex-direction: column;
