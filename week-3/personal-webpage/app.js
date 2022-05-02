@@ -30,7 +30,6 @@ $(() => {
   });
 
   // contact form function
-
   $(".contact-button").on("click", function () {
     $(".resume-container").toggle(100).css("display", "none");
 
