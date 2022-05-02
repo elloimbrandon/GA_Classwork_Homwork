@@ -3,7 +3,6 @@
 /* possibly create a dark theme if have enough time */
 
 * {
-    /* setting both to 0 so there is no margin outside flex boxes */
     margin: 0;
     padding: 0;
 
@@ -16,18 +15,11 @@
 }
 
 html {
-    /* keep an eye on these */
     width: 100%;
     height: 100%;
 
-    /* color: white; */
-
-    background-color: black;
-    /* background-color: #2d3436;
-    background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%); */
-
-    /* background-color: #4d4855;
-    background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%); */
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
 }
 
 .main-flex-container {
@@ -39,13 +31,6 @@ html {
     
     background-color: #2d3436;
     background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
-
-
-    /* width: 100%;
-    height: 100%; */
-
-    /* border: 1px solid green; */
-    /* border-radius: 3px; */
 }
 
 .header {
@@ -57,7 +42,6 @@ html {
     width: 100%;
     height: 10%;
     margin: 0;
-    /* border: 1px solid red; */
 }
 
 .home {
@@ -105,7 +89,6 @@ html {
     padding-right: 5px;
 
     font-size: 25px;
-
 }
 
 .resume-a-tag:hover {
@@ -122,7 +105,6 @@ html {
     width: 50%;
     height: 100%;
 
-    /* to see where the box ends? */
     margin-left: 10px;
 
     border-bottom: 0.5px solid black;
@@ -133,21 +115,16 @@ html {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    /* text-decoration: underline; */
-    
+
     font-size: 17px;
 
     width: 35%;
     height: 100%;
 
-    /* padding-right: 20px; */
-
-/* 
-    border: 1px solid magenta; */
+    padding-right: 20px;
 }
 
 .burger-container {
-
     display: none;
 
     flex-direction: row;
@@ -158,8 +135,6 @@ html {
     width: 7%;
 
     margin-right: 0px;
-
-    /* border: 1px solid black; */
 }
 
 .burger-svg {
@@ -167,12 +142,9 @@ html {
     cursor: pointer;
     background-repeat: no-repeat;
     content: url(icons8-menu.svg);
-    /* content: url(icons8-close.svg); */
 
     width: 50px;
     height: 40px;
-
-    /* border: 1px solid purple; */
 }
 
 .burger-svg-close {
@@ -183,15 +155,7 @@ html {
 
     width: 50px;
     height: 40px;
-
-    /* border: 1px solid purple; */
 }
-
-
-
-/* .burger-svg:hover {
-    opacity: 0.33;
-} */
 
 .burger-bar-ol {
     display: none;
@@ -202,9 +166,6 @@ html {
     background-color: transparent;
 
     padding:10px;
-    /* width: 100%; */
-
-    /* border: 1px solid red; */
 }
 
 .resume-link-burger-bar {
@@ -232,9 +193,6 @@ html {
     height: 80%;
     
     margin-top: 40px;
-
-    /* border: 1px solid orange; */
-
 }
 
 .bio-container {
@@ -247,9 +205,6 @@ html {
     height:100%;
 
     padding-right: 15px;
-
-    /* border: 1px solid purple; */
-
 }
 
 .profile-picture-container {
@@ -263,8 +218,6 @@ html {
 
     padding-top: 10px;
     margin-right: 5px;
-
-    /* border: 1px solid blue; */
 }
 
 .intro-h1 {
@@ -282,8 +235,6 @@ html {
     height: 100%;
 
     margin-top: 5px;
-
-    /* border: 1px solid orange; */
 }
 
 .social-nav-links {
@@ -298,8 +249,6 @@ html {
     margin-right: 15px;
 
     border-radius: 4px;
-
-    /* border: 1px solid red; */
 }
 
 #linked-in {
@@ -344,10 +293,8 @@ html {
     margin-right: 10px;
     margin-left: 10px;
 
-    border-radius: 3px;
-/* 
-    box-shadow: 0.5rem 0.5rem black,
-    -0.5rem -0.5rem #ccc; */
+    border-radius: 4px;
+    border: 1px solid black;
 }
 
 .bio-description-container {
@@ -358,8 +305,6 @@ html {
 
     width: 100%;
     height: 100%;
-
-    /* border: 1px solid green; */
 }
 
 .about-me-title {
@@ -368,12 +313,8 @@ html {
     justify-content: flex-end;
     align-items: flex-start;
 
-    /* text-decoration: underline; */
-
     padding-top: 5px;
     padding-left: 10px;
-
-    /* border: 1px solid yellow; */
 }
 
 .bio-description-row {
@@ -389,9 +330,7 @@ html {
     padding-top: 5px;
     margin-left: 10px;
 
-    /* border: 1px solid cyan; */
     border-top: .5px solid black;
-    /* border-bottom: .5px solid black; */
 }
 
 .about-me-bio-text {
@@ -400,7 +339,6 @@ html {
     justify-content: flex-start;
 
     width: auto;
-
 }
 
 .project-container {
@@ -412,10 +350,7 @@ html {
     width: 100%;
     height: 100%;
 
-    /* border: 1px solid magenta; */
-
     border-left: .5px solid black;
-
 }
 
 .project-rows-title {
@@ -426,8 +361,6 @@ html {
 
     width: 100%;
     height: 7.5%;
-
-    /* text-decoration: underline 2px; */
 }
 
 .project-rows {
@@ -440,8 +373,6 @@ html {
     height: 30%;
 
     margin: 1px;
-
-    /* border: 1px solid blue; */
 }
 
 .project-image-container {
@@ -454,10 +385,6 @@ html {
     height: 100%;
 
     font-size: 12px;
-    /* text-decoration: underline; */
-
-    /* border: 1px solid red; */
-
 }
 
 #minishell-project {
@@ -481,7 +408,6 @@ html {
     padding-bottom: 10px;
     width: 48%;
     height: 85%;
-
 }
 
 #rps-project:hover {
@@ -521,24 +447,15 @@ html {
 }
 
 .project-description-header-text {
-    /* text-decoration: underline; */
-
     padding-top: 15px;
     padding-left: 5px;
     margin-bottom: 5px;
-
-    /* border: 1px solid orange; */
-
 }
 
 .project-description-body-text {
-
     padding-left: 5px;
-    /* border: 1px solid purple; */
 
     font-size: 17px;
-
-
 }
 
 .resume-contact-row-container {
@@ -550,10 +467,7 @@ html {
     width: 100%;
     height: 90%;
 
-
     margin-top: 20px;
-
-    /* border: 1px solid purple; */
 }
 
 .resume-container {
@@ -564,25 +478,32 @@ html {
 
     width: 100%;
     height: 100%;
-
-    /* border: 1px solid red; */
 }
 
 .resume-img {
     content: url(brandon-resume.jpg);
 
     width: 35%;
-    height: 95%;
+    height: 100%;
 
-    /* border: 1px solid green; */
+    margin-bottom: 5px;
+
+    border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 
-.resume-img:hover {
+/* probably leave out */
+
+/* .resume-img:hover {
     transform: scale(1.20);
     transition: all 0.5s ease;
+
+    box-shadow: none;
+    margin-top: 5px;
     margin-bottom: 120px;
-}
+} */
 
 
 
@@ -594,8 +515,6 @@ html {
 
     width: 50%;
     height: 100%;
-
-    /* border: 1px solid blue; */
 }
 
 .contact-button {
@@ -606,15 +525,21 @@ html {
 
     cursor: pointer;
 
-    font-size: 17px;
+    font-size: 20px;
 
-    width: 25%;
-    height: 5%;
+    width: 35%;
+    height: 20%;
 
     margin-bottom: 10px;
 
-    background-color: rgb(0, 202, 253);
-    /* border: 1px solid blue; */
+    color: black;
+
+    border: none;
+    border-radius: 4px;
+
+    box-shadow: 1px 1px 1px 1px;
+    
+    background-color: transparent;
 }
 
 .contact-button:hover {
@@ -629,13 +554,16 @@ html {
 
     cursor: pointer;
 
-    font-size: 17px;
+    font-size: 20px;
 
-    width: 45%;
-    height: 5%;
+    width: 80%;
+    height: 7%;
 
-    background-color: rgb(0, 202, 253);
-    border: 1px solid blue;
+    border: none;
+    border-radius: 4px; 
+    box-shadow: 1px 1px 1px 1px;
+
+    background-color: transparent;
 }
 
 .close-button:hover {
@@ -656,7 +584,10 @@ html {
     margin-top: 10px;
     margin-bottom: 20px;
 
-    border: 1px solid rgb(0, 202, 253);
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
 }
 
 #contact-form label {
@@ -670,26 +601,26 @@ html {
     
     width: 100%;
     height: 100%;
-
 }
 
 .input-field {
-    
     font-size: 20px;
-    width: 100%;
+    max-width: 100%;
 
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
 
-    background-color: #e9e0c9;
-    border: 1px solid rgb(0, 202, 253);
+    background-color: transparent;
+    border: 1px solid #2d3436;
+    border-radius: 4px;
+
 
 }
 
 #submit-btn {
     border: none;
-    font-size: 20px;
+    font-size: 25px;
 
     width: 100%;
     height: 20%;
@@ -698,7 +629,10 @@ html {
     padding-top: 10px;
     padding-bottom: 10px;
 
-    background-color: rgb(0, 202, 253);
+    background-color: transparent;
+    border: .5px solid black;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 4px;
 }
 
 #submit-btn:hover {
@@ -717,7 +651,6 @@ html {
     .burger-name-flex-container {
         margin: 0;
         padding-left: 10px;
-        /* border: 1px solid blue; */
     }
 
     .home {
@@ -735,13 +668,9 @@ html {
         font-size: 15px;
     
         width: 80%;
-    
-        /* border: 1px solid magenta; */
     }
 
     .burger-container {
-    
-        /* activate when screen is a certain size */
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -751,7 +680,6 @@ html {
 
         height: 100%;
         width: 25%;
-    
     
         border-left: .5px solid black;
     }
@@ -791,8 +719,6 @@ html {
         height: 80%;
         
         margin-top: 15px;
-        
-        /* border: 1px solid black; */
     }
 
     .about-me-bio-text {
@@ -802,16 +728,12 @@ html {
     }
 
     .profile-picture-container {
-    
         width: 100%;
         height: auto;
     
         padding-left: 2px;
         padding-top: 0px;
         margin-right: 0px;
-
-    
-        /* border: 1px solid blue; */
     }
 
     .profile-picture-img {
@@ -822,8 +744,6 @@ html {
 
     .social-nav-links {
         margin-right: 0px;
-    
-        /* border: 1px solid red; */
     }
 
     #linked-in {
@@ -848,10 +768,6 @@ html {
         height: 100vh;
 
         margin: 0px;
-        /* padding-top: 15px; */
-    
-        /* border: 1px solid magenta; */
-    
     }
 
     .project-rows {
@@ -861,14 +777,10 @@ html {
         align-items: flex-start;
     
         width: 100%;
-
-        /* keep an eye here */
-        /* height: 100%; */
     
         margin: 1px;
-    
-        /* border: 1px solid blue; */
     }
+
     .project-image-container {
     
         width: 55%;
@@ -891,7 +803,6 @@ html {
         height: 80%;
     }
 
-    /* currently working on */
     .project-description-container {
         display: flex;
         flex-direction: column;
@@ -900,48 +811,39 @@ html {
     
         width: 45%;
         height: 100%;
-    
-        /* border: 1px solid blue; */
     }
     
     .project-description-header-text {
         text-decoration: underline;
+        font-size: 17px;
     
         padding-top: 15px;
         padding-left: 5px;
-        margin-bottom: 5px;
-
-        font-size: 17px;
-    
-        /* border: 1px solid orange; */
-    
+        margin-bottom: 5px;    
     }
     
     .project-description-body-text {
-    
         padding-left: 5px;
-        /* border: 1px solid purple; */
     
         font-size: 14px;
-    
     }
 
     .resume-contact-row-container {
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        height: 91vh;
     
     
         margin-top: 2px;
-    
-        border: 1px solid purple;
     }
 
     .resume-img {
         content: url(brandon-resume.jpg);
     
         width: 100%;
-        height: 90%;
+        height: 100%;
+
+        margin-top: 10px;
     
         border: 1px solid green;
     }
@@ -949,9 +851,9 @@ html {
     .contact-button {
         font-size: 15px;
     
-        width: 60%;
-        height: 5%;
-        margin-top: -25px;
+        width: 70%;
+        height: 7%;
+        margin-top: 10px;
     
         margin-bottom: 5px;
     }
@@ -959,19 +861,24 @@ html {
     .contact-container {
     
         width: 100%;
-    
-        border: 1px solid blue;
+        height: 100%;
+    }
+
+    .close-button {
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 
     #contact-form {
         width: 100%;
-        height: 100%;
+        height: 85%;
     
         padding: 10px;
     
         margin-top: 5px;
         margin-bottom: 0px;
     }
+
     #contact-form label {
         line-height: 25px;
         text-decoration: underline;
@@ -988,11 +895,5 @@ html {
     .input-field {
         font-size: 20px;
         height: 6%;
-    
     }
-
-    .close-button {
-        font-size: 20px;
-    }
-
 }
